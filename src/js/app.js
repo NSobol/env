@@ -1,3 +1,3 @@
-export default function demo (value) {
+export default function demo(value) {
   return value;
 }
