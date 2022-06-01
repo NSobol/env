@@ -1,1 +1,3 @@
-console.log('it works!');
+export default function demo(value) {
+  return value;
+}
