@@ -1,6 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/f75dsbvdvt5kysf4?svg=true)](https://ci.appveyor.com/project/NSobol/env)
 
-https://nsobol.github.io/env/
+
 
 
 **Важно**: все задачи к данной лекции можно выполнить в виде одного репозитория (т.е. допускается не делать отдельные репозитории на каждую задачу).

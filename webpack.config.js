@@ -7,13 +7,12 @@ if (process.env.NODE_ENV === 'production') {
   mode = 'production';
 }
 
-
 module.exports = {	
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
 	filename: '[name].bundle.js',
-	assetModuleFilename: 'assets/[name]-[hash][ext]'
+	assetModuleFilename: 'assets/images/[name]-[hash][ext]'
   },
   module: {
     rules: [{

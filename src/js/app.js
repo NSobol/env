@@ -1,3 +1,1 @@
-export default function demo(value) {
-  return value;
-}
+console.log('it works!');
