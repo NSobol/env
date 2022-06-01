@@ -1,0 +1,31 @@
+image: Ubuntu1804  # образ для сборки
+
+stack: node 10  # окружение
+
+branches:
+  only:
+    - main  # ветка git
+
+cache: node_modules  # кеширование
+
+install:
+  - yarn install  # команда установки зависимостей
+
+build: off  # отключаем встроенную в appveyor систему сборки
+
+build_script:
+  - yarn run build   # команда сборки
+
+script:
+  - yarn run lint && yarn test  # скрипт тестирования
+
+environment:
+  access_token:
+  secure: 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
+
+deploy_script:
+  - git config --global credential.helper store
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+  - git config --global user.email "nsoboleva1979@rambler.ru"
+  - git config --global user.name "Soboleva Natalia"
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
