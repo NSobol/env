@@ -25,7 +25,7 @@ environment:
 
 deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
-  - git config --global user.email veda09@yandex.ru
-  - git config --global user.name NSobol
- - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+  - git config --global user.email "veda09@yandex.ru"
+  - git config --global user.name "NSobol"
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
